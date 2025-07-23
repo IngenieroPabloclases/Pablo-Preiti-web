@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pablo Preiti – Clases Universitarias de Matemática, Álgebra y Física</title>
+  <meta name="description" content="Clases particulares universitarias de Matemática, Álgebra y Física. Presenciales en Palermo (CABA) y online por Zoom/Meet para estudiantes de Ingeniería y carreras afines en toda Latinoamérica." />
+  <meta name="author" content="Pablo Preiti" />
+
+  <!-- Verificación Google Search Console -->
+  <meta name="google-site-verification" content="E72P3285hbZ8bJfIP4DssheD-f5lHvH37AcuP3MhfnA" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clases Universitarias con Pablo Preiti" />
+  <meta property="og:description" content="Preparación para parciales, finales y trabajos prácticos. Presencial en Palermo & Online Latinoamérica." />
+  <meta property="og:image" content="assets/flyer.jpg" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-oscuro: #003e7e;
+      --azul-medio: #1d5fa7;
+      --azul-claro: #d1e4ff;
+      --gris-fondo: #f7f9fc;
+      --gris-texto: #444;
+      --blanco: #fff;
+      --max-width: 1100px;
+      --radius: 12px;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--gris-texto);background:var(--gris-fondo);line-height:1.5;}
+    img{max-width:100%;height:auto;}
+    a{text-decoration:none;color:var(--azul-medio);}a:hover{text-decoration:underline;}
+    h1,h2,h3{color:var(--azul-oscuro);margin-top:0;}
+    h1{font-size:clamp(2rem,5vw,3rem);}  
+    h2{font-size:clamp(1.75rem,4vw,2.25rem);}  
+    h3{font-size:1.25rem;}  
+    p{margin-top:0;}
+
+    /* Layout helpers */
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 1.25rem;}
+    .center{text-align:center;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1.25rem;margin-top:1.5rem;}
+    .card{background:var(--blanco);padding:1.75rem;border-radius:var(--radius);box-shadow:0 2px 6px rgba(0,0,0,.08);text-align:center;}
+    .card h3{margin-bottom:.5rem;}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:10;background:var(--blanco);box-shadow:0 1px 4px rgba(0,0,0,.08);}  
+    header .nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem 1.25rem;max-width:var(--max-width);margin:0 auto;}  
+    header .brand{font-weight:800;color:var(--azul-oscuro);font-size:1.25rem;}  
+    header nav a{margin-left:1rem;font-weight:600;color:var(--azul-oscuro);}header nav a.btn-cta{padding:.35rem .9rem;background:var(--azul-oscuro);color:var(--blanco);border-radius:var(--radius);text-decoration:none;}header nav a.btn-cta:hover{opacity:.9;text-decoration:none;}
+
+    /* Hero */
+    .hero{padding:5rem 0 4rem;text-align:center;background:var(--azul-oscuro);color:var(--blanco);}   
+    .hero h1{color:var(--blanco);margin-bottom:1rem;}   
+    .hero p.lead{font-size:1.25rem;max-width:700px;margin:0 auto 2rem;}   
+    .hero-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+    .btn{display:inline-block;padding:.9rem 1.5rem;font-weight:700;border-radius:var(--radius);transition:.15s all ease;}
+    .btn-primary{background:var(--azul-medio);color:var(--blanco);} .btn-primary:hover{opacity:.9;text-decoration:none;}
+    .btn-light{background:var(--blanco);color:var(--azul-oscuro);} .btn-light:hover{background:var(--azul-claro);text-decoration:none;}
+
+    /* Section spacing */
+    section{padding:4rem 0;}  
+    section.alt{background:var(--blanco);}  
+
+    /* Materias icons */
+    .materia-icon{font-size:2.5rem;display:block;margin-bottom:.5rem;}
+
+    /* Modalidades grid */
+    .modalidades-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2rem;margin-top:2rem;}
+    .modalidades-grid .modalidad{background:var(--blanco);padding:2rem;border-radius:var(--radius);box-shadow:0 2px 6px rgba(0,0,0,.08);}  
+    .modalidad ul{padding-left:1.25rem;margin:0;} .modalidad ul li{margin-bottom:.5rem;}
+
+    /* Precios */
+    table.precios{width:100%;border-collapse:collapse;margin-top:2rem;background:var(--blanco);border-radius:var(--radius);overflow:hidden;}
+    table.precios th,table.precios td{text-align:left;padding:1rem;border-bottom:1px solid #e0e6ef;}
+    table.precios th{background:var(--azul-claro);color:var(--azul-oscuro);font-weight:700;text-align:center;}
+    table.precios td{text-align:center;}
+    table.precios tr:last-child td{border-bottom:none;}
+
+    /* Testimonios */
+    .testimonios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1.5rem;margin-top:2rem;}
+    .testimonial{background:var(--blanco);padding:1.75rem;border-radius:var(--radius);box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:.95rem;}
+    .testimonial .alumno{margin-top:1rem;font-weight:700;color:var(--azul-oscuro);}
+
+    /* Contacto */
+    .contacto-wrapper{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2rem;}@media (min-width:768px){.contacto-wrapper{grid-template-columns:1fr 1fr;}}
+    form.contact-form{background:var(--blanco);padding:2rem;border-radius:var(--radius);box-shadow:0 2px 6px rgba(0,0,0,.08);}  
+    form.contact-form label{display:block;margin-bottom:.25rem;font-weight:600;}  
+    form.contact-form input,form.contact-form textarea{width:100%;padding:.75rem;margin-bottom:1rem;border:1px solid #ccd5e3;border-radius:var(--radius);font-family:inherit;font-size:1rem;}  
+    form.contact-form button{width:100%;}
+
+    .contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:1rem;}
+    .contact-card{background:var(--blanco);padding:1.25rem;border-radius:var(--radius);text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.08);}  
+
+    /* Footer */
+    footer{background:var(--azul-oscuro);color:var(--blanco);padding:2rem 0;font-size:.9rem;text-align:center;}
+    footer a{color:var(--blanco);font-weight:600;}
+    footer nav a{margin:0 .75rem;}
+
+    /* Utilities */
+    .badge{display:inline-block;padding:.25rem .75rem;font-size:.8rem;border-radius:999px;background:var(--azul-claro);color:var(--azul-oscuro);font-weight:600;}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0;}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#contenido">Saltar al contenido principal</a>
+
+  <header>
+    <div class="nav">
+      <a href="#inicio" class="brand">Pablo Preiti</a>
+      <nav aria-label="Menú principal">
+        <a href="#materias">Materias</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#precios">Precios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto" class="btn-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <h1>Clases Universitarias de Matemática, Álgebra y Física</h1>
+        <p class="lead">Presenciales en <strong>Palermo (CABA)</strong> y <strong>Online por Zoom/Meet</strong>. Preparación para parciales, finales y trabajos prácticos. Para estudiantes de Ingeniería y carreras afines de universidades públicas y privadas.</p>
+        <div class="hero-buttons">
+          <a id="heroWhatsAppBtn" href="#" class="btn btn-light">Escribime por WhatsApp</a>
+          <a href="#precios" class="btn btn-primary">Ver Planes & Precios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE PABLO -->
+    <section id="sobre" class="alt">
+      <div class="container">
+        <div class="center">
+          <img src="assets/pablo-preiti.jpg" alt="Foto de Pablo Preiti" style="width:160px;height:auto;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.25);margin-bottom:1rem;" />
+          <h2>Hola, soy Pablo Preiti</h2>
+          <p>Profesor universitario con amplia experiencia ayudando a estudiantes de <strong>Ingeniería</strong>, <strong>Ciencias Exactas</strong> y otras carreras con cursos exigentes de matemática y física. Doy clases personalizadas, adaptadas a parciales reales, guías de ejercicios y trabajos prácticos de distintas universidades.</p>
+          <p><span class="badge">+10 años dando clases</span> <span class="badge">Modalidad flexible</span> <span class="badge">Material incluido</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIAS -->
+    <section id="materias">
+      <div class="container center">
+        <h2>Materias que enseño</h2>
+        <p>Refuerzo conceptual + práctica intensiva orientada a parciales y finales.</p>
+        <div class="cards">
+          <div class="card">
+            <span class="materia-icon">📈</span>
+            <h3>Análisis Matemático</h3>
+            <p>Límites, derivadas, integrales, series, ecuaciones diferenciales básicas.</p>
+          </div>
+          <div class="card">
+            <span class="materia-icon">📐</span>
+            <h3>Álgebra</h3>
+            <p>Vectores, matrices, determinantes, espacios vectoriales, eigenvalores.</p>
+          </div>
+          <div class="card">
+            <span class="materia-icon">⚙️</span>
+            <h3>Física</h3>
+            <p>Mecánica, dinámica, energía, oscilaciones, electricidad y magnetismo inicial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIVERSIDADES -->
+    <section id="universidades" class="alt">
+      <div class="container center">
+        <h2>¿De qué universidades? ¡De todas!</h2>
+        <p>Trabajo con estudiantes de universidades públicas y privadas. Experiencia con guías y parciales de:</p>
+        <p><strong>ITBA · UBA · UTN · UADE · USAL · UNLP · UNSAM · UNGS · UCA</strong> y más. Si tu universidad no está en la lista, escribime igual.</p>
+      </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section id="modalidades">
+      <div class="container center">
+        <h2>Modalidades de clase</h2>
+        <p>Pensadas para adaptarse a tu forma de estudiar y a tus tiempos.</p>
+        <div class="modalidades-grid">
+          <div class="modalidad">
+            <h3>Presencial en Palermo</h3>
+            <ul>
+              <li>Clases individuales o grupos pequeños (2–4 estudiantes).</li>
+              <li>Pizarra, apuntes impresos y ejercicios guiados.</li>
+              <li>Ideal para intensivos pre-parcial.</li>
+            </ul>
+          </div>
+          <div class="modalidad">
+            <h3>Online en Vivo (Zoom / Meet)</h3>
+            <ul>
+              <li>Compartición de pantalla + tableta digital.</li>
+              <li>Grabación opcional para repasar.</li>
+              <li>Podés sumarte desde cualquier país de habla hispana.</li>
+            </ul>
+          </div>
+          <div class="modalidad">
+            <h3>Clases Express / Dudas Puntuales</h3>
+            <ul>
+              <li>Bloques de 30 o 45 min.</li>
+              <li>Resolución de problemas específicos.</li>
+              <li>Ideal en la semana del examen.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section id="precios" class="alt">
+      <div class="container center">
+        <h2>Planes & Precios</h2>
+        <p><strong>Valores de referencia – actualizá conmigo por WhatsApp.</strong> Se puede pagar en pesos argentinos (transferencia / Mercado Pago) o USD para alumnos internacionales.</p>
+        <table class="precios">
+          <thead>
+            <tr>
+              <th>Modalidad</th>
+              <th>ARS (por clase)</th>
+              <th>USD (aprox.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Individual 1h30</td>
+              <td id="precio-1h30-ars">$[a definir]</td>
+              <td id="precio-1h30-usd">US$[a definir]</td>
+            </tr>
+            <tr>
+              <td>Pack 5 clases (ahorro)</td>
+              <td id="precio-5clases-ars">$[a definir]</td>
+              <td id="precio-5clases-usd">US$[a definir]</td>
+            </tr>
+            <tr>
+              <td>Pack 10 clases (ahorro mayor)</td>
+              <td id="precio-10clases-ars">$[a definir]</td>
+              <td id="precio-10clases-usd">US$[a definir]</td>
+            </tr>
+            <tr>
+              <td>Grupo 2–4 (precio por alumno / 1h30)</td>
+              <td id="precio-grupo-ars">$[a definir]</td>
+              <td id="precio-grupo-usd">US$[a definir]</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1.5rem;">Cada clase regular dura <strong>1 hora y media</strong>. Consultá descuentos por <strong>clases regulares semanales</strong> o <strong>intensivos pre-final</strong>.</p>
+        <div style="margin-top:2rem;">
+          <a id="preciosWhatsAppBtn" href="#" class="btn btn-primary">Consultar Disponibilidad</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios">
+      <div class="container center">
+        <h2>Lo que dicen mis alumnos</h2>
+        <p>(Colocá testimonios reales – te dejo ejemplos de marcador de posición.)</p>
+        <div class="testimonios-grid">
+          <div class="testimonial">
+            “Aprobé Análisis I en la UBA después de dos intentos. Pablo me ordenó la teoría y practicamos parciales reales.”
+            <div class="alumno">— Ana G. (UBA Ingeniería)</div>
+          </div>
+          <div class="testimonial">
+            “Excelente para preparar Física I de la UTN. Las clases online con pizarra digital se entienden perfecto.”
+            <div class="alumno">— Martín R. (UTN)</div>
+          </div>
+          <div class="testimonial">
+            “Tomamos clases grupales con un amigo para Álgebra Lineal. Ahorramos plata y aprobamos los dos.”
+            <div class="alumno">— Sofía & Leo (ITBA)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAR -->
+    <section id="reservar" class="alt">
+      <div class="container center">
+        <h2>Reservá tu clase</h2>
+        <p>Elegí un horario que te quede cómodo. Si no encontrás lugar, escribime por WhatsApp.</p>
+        <div style="max-width:600px;margin:2rem auto;">
+          <div style="position:relative;padding-top:56.25%;">
+            <iframe src="https://calendly.com/tu-usuario/clase?hide_gdpr_banner=1" title="Calendario de reservas" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="container center">
+        <h2>Contacto</h2>
+        <p>¿Dudas? ¿Querés coordinar una clase? Mandame un mensaje.</p>
+        <div class="contacto-wrapper">
+          <div>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <h3>WhatsApp</h3>
+                <p><a id="contactWhatsAppLink" href="#" class="btn btn-primary">Escribir</a></p>
+              </div>
+              <div class="contact-card">
+                <h3>Email</h3>
+                <p><a id="emailLink" href="mailto:preitipablo@gmail.com">preitipablo@gmail.com</a></p>
+              </div>
+              <div class="contact-card">
+                <h3>Teléfono</h3>
+                <p><a id="telLink" href="tel:+541149471940">11 4947‑1940</a></p>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/tuform" method="POST">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="universidad">Universidad (opcional)</label>
+            <input type="text" id="universidad" name="universidad">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="anio"></span> Pablo Preiti. Todos los derechos reservados.</p>
+      <nav>
+        <a href="#inicio">Inicio</a>·
+        <a href="#materias">Materias</a>·
+        <a href="#precios">Precios</a>·
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <p style="margin-top:1rem;font-size:.8rem;opacity:.85;">Los valores publicados son de referencia y pueden variar según la complejidad de la materia, modalidad y cantidad de alumnos. Consultá disponibilidad antes de reservar.</p>
+    </div>
+  </footer>
+
+  <script>
+    const PABLO_PHONE_INTL = "+541149471940"; 
+    const WHATSAPP_MSG = encodeURIComponent("Hola Pablo, vi tu web y quiero coordinar clases de [Materia] para [Universidad].");
+    const heroBtn = document.getElementById("heroWhatsAppBtn");
+    const preciosBtn = document.getElementById("preciosWhatsAppBtn");
+    const contactLink = document.getElementById("contactWhatsAppLink");
+    const waUrl = `https://wa.me/${PABLO_PHONE_INTL.replace(/[^\d]/g,'')}?text=${WHATSAPP_MSG}`;
+    [heroBtn,preciosBtn,contactLink].forEach(btn=>{if(btn)btn.href=waUrl;});
+    document.getElementById("anio").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
